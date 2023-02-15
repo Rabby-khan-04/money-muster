@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="py-10">
+            <h1 class="font-mono font-bold text-5xl text-[#31A5AC] text-center">Money Master💰 </h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-16 px-16">
+            <div>
+                <img src="img/money-master.png" class="w-full block" alt="">
+            </div>
+            <div class="bg-cyan-50 row-start-1 md:row-start-auto p-14">
+                <div>
+
+                    <div class="income text-center mb-8">
+                        <h2 class="text-2xl text-center font-semibold mb-8">Income</h2>
+                        <div class="form-group">
+                            <label for="" class="text-xl font-semibold inline-block mr-4">Income: </label>
+                            <input type="text" id="income" placeholder="Enter Your Income"
+                                class="input input-bordered rounded-none w-full max-w-xs" />
+                        </div>
+                    </div>
+
+                    <div class="expences text-center mb-8">
+                        <h2 class="text-2xl text-center font-semibold mb-8">Expenses</h2>
+
+                        <div class="form-group mb-5">
+                            <label for="" class="text-xl font-semibold inline-block mr-4">Food: </label>
+                            <input type="text" id="food-cost" placeholder="Enter Your Food Expens"
+                                class="input input-bordered rounded-none w-full max-w-xs" />
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <label for="" class="text-xl font-semibold inline-block mr-4">Rent: </label>
+                            <input type="text" id="rent-cost" placeholder="Enter Your Rent Expens"
+                                class="input input-bordered rounded-none w-full max-w-xs" />
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <label for="" class="text-xl font-semibold inline-block mr-4">Clothes: </label>
+                            <input type="text" id="clothe-cost" placeholder="Enter Your Clothes Expens"
+                                class="input input-bordered rounded-none w-full max-w-xs" />
+                        </div>
+
+                        <div class="mb-5">
+                            <button id="calculate"
+                                class="btn btn-info rounded-md shadow text-xl text-white">Calculate</button>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl text-center font-semibold mb-8">Total Expenses: <span
+                                    id="total-expens">00</span></h2>
+                            <h2 class="text-2xl text-center font-semibold mb-8">Balance: <span id="balance">00</span>
+                            </h2>
+                        </div>
+
+                        <div class="text-center">
+                            <label class="input-group flex justify-center mb-5">
+                                <label class="text-xl font-semibold inline-block mt-2 mr-4">Save:</label>
+                                <input type="text" id="saving-amount" placeholder="Saving Amount"
+                                    class="input input-bordered" />
+                                <span>%</span>
+                            </label>
+                            <button id="savings-btn"
+                                class="btn btn-info rounded-md shadow text-xl text-white">Save</button>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl text-center font-semibold mb-8">Saving Amount: <span
+                                    id="savings">00</span> </h2>
+                            <h2 class="text-2xl text-center font-semibold mb-8">Remaining Balance: <span
+                                    id="remain-balance">00</span> </span>
+                            </h2>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
