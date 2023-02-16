@@ -31,14 +31,13 @@ document.getElementById("calculate").addEventListener("click", (e) => {
 
     if (income > totalCost) {
       const balance = income - totalCost;
-      if (balance > 1000) {
+      if (balance >= 1000) {
         setElementValue("total-expens", totalCost);
         setElementValue("balance", balance);
 
         document.getElementById("food-cost").value = "";
         document.getElementById("rent-cost").value = "";
         document.getElementById("clothe-cost").value = "";
-        document.getElementById("income").value = "";
       } else {
         alert("You are spending Too Much. You shoud keep 1000 for imergency");
       }
@@ -54,14 +53,20 @@ document.getElementById("savings-btn").addEventListener("click", () => {
   const saveingPercentage = getTheInputValue("saving-amount");
   if (!isNaN(saveingPercentage)) {
     if (saveingPercentage >= 0 && saveingPercentage <= 100) {
-      const currentBalance = getElementValue("balance");
+      const income = getTheInputValue("income");
 
-      const sevingamount = (saveingPercentage * currentBalance) / 100;
-      const remainingBalance = currentBalance - sevingamount;
+      const balance = getElementValue("balance");
+      const sevingamount = (saveingPercentage * income) / 100;
+      const remainingBalance = balance - sevingamount;
 
-      setElementValue("savings", sevingamount);
-      setElementValue("remain-balance", remainingBalance);
-      document.getElementById("saving-amount").value = "";
+      if (balance > sevingamount) {
+        setElementValue("savings", sevingamount);
+        setElementValue("remain-balance", remainingBalance);
+        document.getElementById("saving-amount").value = "";
+        document.getElementById("income").value = "";
+      } else {
+        alert("You Can't save more then you balance");
+      }
     } else {
       alert("You Can't save more then 100% of your money");
     }
